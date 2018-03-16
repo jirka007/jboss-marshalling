@@ -64,8 +64,13 @@ public final class OtherMarshallerTests extends TestBase {
         }
     }
 
+    /**
+     * Test for JBMAR-218
+     *
+     * @throws Exception
+     */
     @Test
-    public void main(String[] args) throws Exception {
+    public void objectReplacementWithNullValue() throws Exception {
         C1 object = new C1();
         write(object, "marshall.ser");
         C1 object2 = (C1) read("marshall.ser");
